@@ -1,17 +1,55 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDom from 'react-dom';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import HeaderBlock from './components/HeaderBlock';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+import'./index.css';
+
+const AppList = () =>{
+  const item = ['item 1', 'item2','item3', 'item4']
+  const firstItem = <li>Item 0 </li>
+
+    const isAuth = true;
+
+
+    return (
+      <ul>
+        { isAuth ? firstItem : null}
+        {item.map(item => <li>{item}</li>)}
+        <li>{item[0]} </li>
+        <li>{item[1]}</li>
+      </ul>
+    );
+}
+
+const AppInput = () => {
+  const placeholder = 'Type text...';
+
+  return (
+    <label>
+      <input placeholder={placeholder}/>
+    </label>
+  )
+}
+
+const AppHeader = () =>  {
+
+  return (
+    <h1 className="header">Hello World React.js</h1>
+  );
+};
+
+const App = () =>{
+    return(
+    <>
+        <AppHeader/>
+        <AppInput/>
+        <AppList/>
+        <AppHeader/>
+        <AppList/>
+    </>
+    )
+}
+
+
+ReactDom.render(<App/>, document.getElementById('root'));
