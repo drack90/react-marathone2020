@@ -1,0 +1,30 @@
+.contentBlockCover{
+    background-color: aqua;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    
+
+    .contentTittle{
+        margin: 50px auto ;
+        font-size: 50px;
+        color: rgba(255,255,255, 0.5);
+        
+    }
+    p{
+        margin-left: 30px;
+    }
+    
+    .firstText{
+        font-size: 26px;
+        color: rgba(178, 92, 224, 0.9) ;
+    }
+    .secondText{
+        font-size: 26px;
+        color: wheat;
+    }
+    
+}
+
